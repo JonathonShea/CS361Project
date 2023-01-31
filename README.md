@@ -1,1 +1,1 @@
-# WpfApp1
+# CS361 Project - PF2 Encounter Builder
