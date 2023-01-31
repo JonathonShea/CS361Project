@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Slider x:Name="LevelSlider" Maximum="20"  HorizontalAlignment="Left" Margin="140,34,0,0" VerticalAlignment="Top" Width="119"
+                TickPlacement="BottomRight" Ticks="0,5,10,15,20" AutoToolTipPlacement="TopLeft" Height="29" ValueChanged="LevelSlider_ValueChanged"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="89,370,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="200,370,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="400,370,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="300,30,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Trivial"/>
+            <ComboBoxItem Content="Low"/>
+            <ComboBoxItem Content="Moderate"/>
+            <ComboBoxItem Content="Severe"/>
+            <ComboBoxItem Content="Extreme"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="170,13,0,0" TextWrapping="Wrap" Text="Party Level" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.813,0.652"/>
+        <ListView x:Name="AvailableItems"  Margin="16,128,457,127">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Level}" Header="Level"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Type}" Header="Type" Width="75"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="438,128,32,127">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Center"/>
+        <TextBox Name="PartySizeBox" HorizontalAlignment="Left" Margin="28,34,0,0" TextWrapping="Wrap" Text="Party Size" VerticalAlignment="Top" Width="81" TextChanged="TextBox_TextChanged" />
+
+    </Grid>
+</Window>
